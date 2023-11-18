@@ -1,13 +1,10 @@
-import { trpc } from "@/client/lib/trpc"
+import { HomeContent } from "@/client/components/page/home"
 
 
 const Home = () =>{
-  const { data } = trpc.satellite.getCoordinates.useQuery()
   
   return (
-    <div>
-      <h1>Hello world</h1>
-    </div>
+    <HomeContent />
   )
 }
 
