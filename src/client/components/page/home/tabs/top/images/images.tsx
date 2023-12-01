@@ -11,26 +11,28 @@ const Images = ({ topValues }: ImagesProps) =>{
       <div
         key={ data.tag } 
         className="flex flex-col text-center">
-        <div className="mb-2">
-          <p>{ data.title }</p>
+        <div className="mb-4">
+          <p className="text-sm mb-1">{ data.title }</p>
           <a 
             href={`https://suzaku.eorc.jaxa.jp/JASMIN/data/img/${ topValues.area }/${ data.tag }/${ topValues.year }/img-${ data.tag }-${ topValues.year }${ topValues.month }${ topValues.day }-${ topValues.area }.png`}
             target="_blank">
             <img
-              src={`https://suzaku.eorc.jaxa.jp/JASMIN/data/img/${ topValues.area }/${ data.tag }/${ topValues.year }/img-${ data.tag }-${ topValues.year }${ topValues.month }${ topValues.day }-${ topValues.area }.png`} 
+              className="max-w-[160px] h-[152px]"
+              src={`https://suzaku.eorc.jaxa.jp/JASMIN/data/img/${ topValues.area }/${ data.tag }/${ topValues.year }/img-${ data.tag }-${ topValues.year }${ topValues.month }${ topValues.day }-${ topValues.area }-s.png`} 
               alt="" />
           </a>
         </div>
         <div>
-          <p className="flex flex-col">
+          <p className="flex flex-col text-sm mb-1">
             { data.title }
-            <span>anomaly</span>
+            <span className="leading-[1]">anomaly</span>
           </p>
           <a 
             href={`https://suzaku.eorc.jaxa.jp/JASMIN/data/img/${ topValues.area }/${ data.tag }/${ topValues.year }/img-${ data.tag }_c-${ topValues.year }${ topValues.month }${ topValues.day }-${ topValues.area }.png`}
             target="_blank">
             <img
-              src={`https://suzaku.eorc.jaxa.jp/JASMIN/data/img/${ topValues.area }/${ data.tag }/${ topValues.year }/img-${ data.tag }_c-${ topValues.year }${ topValues.month }${ topValues.day }-${ topValues.area }.png`} 
+              className="max-w-[160px] h-[152px]"
+              src={`https://suzaku.eorc.jaxa.jp/JASMIN/data/img/${ topValues.area }/${ data.tag }/${ topValues.year }/img-${ data.tag }_c-${ topValues.year }${ topValues.month }${ topValues.day }-${ topValues.area }-s.png`} 
               alt="" />
           </a>
         </div>
@@ -41,7 +43,7 @@ const Images = ({ topValues }: ImagesProps) =>{
   }
 
   return (
-    <div className=" flex gap-x-1">
+    <div className="flex max-w-[1200] justify-evenly mx-auto">
       { renderImages() }
     </div>
   )
